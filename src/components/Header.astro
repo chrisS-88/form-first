@@ -1,0 +1,158 @@
+---
+import { navLinks } from "../data/navLinks.js";
+import Button from "./Button.astro";
+import NavLink from "./NavLink.astro";
+---
+
+<header class="py-6">
+  <nav
+    class="fixed top-0 left-0 w-full h-24 flex justify-between items-center px-6 font-heading tracking-tighter uppercase z-50 bg-brand-800 transition-transform duration-300 shadow-lg">
+    <a href="/" class="font-heading text-3xl font-semibold text-primary"> Form First </a>
+
+    <!-- decktop menu -->
+    <ul class="hidden lg:flex gap-5">
+      {
+        navLinks.map((link) => {
+          return (
+            <li>
+              <NavLink href={link.href} label={link.label} />
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <div class="hidden lg:flex">
+      <Button title="Get Started" href="/" size="md" />
+    </div>
+
+    <!-- Mobile Button -->
+    <button
+      id="menu-btn"
+      class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1 focus:outline-none cursor-pointer"
+      aria-label="Toggle Menu">
+      <span class="hamburger-bar transition-transform"></span>
+      <span class="hamburger-bar transition-opacity"></span>
+      <span class="hamburger-bar transition-transform"></span>
+    </button>
+
+    <!-- Mobile Sidebar -->
+    <div
+      id="mobile-menu"
+      class="p-4 z-50 lg:hidden fixed left-0 top-0 h-full w-2/3 bg-dark/90 backdrop-blur-md transform -translate-x-full transition-all duration-700 ease-in-out opacity-0 text-light overflow-y-scroll">
+      <span class="text-xl font-light text-primary">Form First</span>
+
+      <div class="w-full h-[.5px] bg-secondary/60 mt-6"></div>
+
+      <ul class="flex flex-col justify-center gap-6 text-2xl px-4 py-24">
+        {
+          navLinks.map((link, i) => {
+            return (
+              <li>
+                <NavLink href={link.href} label={link.label} />
+              </li>
+            );
+          })
+        }
+      </ul>
+
+      <div class="w-full h-[.5px] bg-secondary/60 mb-6"></div>
+
+      <div class="capitalize text-xs">
+        <div class="mt-16">
+          <p>© {new Date().getFullYear()} Your Company Name</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    /* Mobile nav btn toggle */
+    #menu-btn.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(8px);
+    }
+    #menu-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-btn.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-8px);
+    }
+  </style>
+
+  <script>
+    // @ts-nocheck    DISABLES TS FOR THIS SCRIPT BLOCK
+
+    const NAV_DEFAULTS = {
+      hideOnScroll: true,
+      hideAfter: 80,
+      showAtTop: true,
+      hiddenClass: "-translate-y-full",
+    };
+
+    function initNav(userOptions = {}) {
+      const options = { ...NAV_DEFAULTS, ...userOptions };
+
+      const nav = document.querySelector("nav");
+      if (!nav || !options.hideOnScroll) return;
+
+      let lastScrollY = window.scrollY;
+      let accumulatedDownScroll = 0;
+
+      function onScroll() {
+        const currentScrollY = window.scrollY;
+        const delta = currentScrollY - lastScrollY;
+
+        // Always visible near top
+        if (options.showAtTop && currentScrollY < options.hideAfter) {
+          nav.classList.remove(options.hiddenClass);
+          accumulatedDownScroll = 0;
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        // Scrolling down
+        if (delta > 0) {
+          accumulatedDownScroll += delta;
+          if (accumulatedDownScroll >= options.hideAfter) {
+            nav.classList.add(options.hiddenClass);
+          }
+        }
+
+        // Scrolling up
+        if (delta < 0) {
+          nav.classList.remove(options.hiddenClass);
+          accumulatedDownScroll = 0;
+        }
+
+        lastScrollY = currentScrollY;
+      }
+
+      window.addEventListener("scroll", onScroll);
+
+      // Cleanup for SPAs / reuse
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+      };
+    }
+
+    // MOBILE NAV BUTTON BEHAVIOUR
+    function initMobileMenu() {
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      const toggleMenu = () => {
+        menuBtn?.classList.toggle("open");
+        mobileMenu?.classList.toggle("-translate-x-full");
+        mobileMenu?.classList.toggle("opacity-0");
+        document.body.classList.toggle("overflow-hidden");
+      };
+
+      menuBtn?.addEventListener("click", toggleMenu);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initNav();
+      initMobileMenu();
+    });
+  </script>
+</header>

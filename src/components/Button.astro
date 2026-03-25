@@ -1,0 +1,23 @@
+---
+const { title, href, size = "md", variant = "primary" } = Astro.props;
+
+const variants = {
+  primary:
+    "text-brand-900 bg-primary border border-primary hover:border-primary hover:bg-primary/90 transition-all font-heading tracking-wide",
+
+  secondary:
+    "text-brand-900 border-2 border-brand-900/90 hover:border-brand-900 hover:bg-brand-900/5 transition-all font-heading tracking-wide",
+};
+
+const sizes = {
+  sm: "px-3 py-1 text-sm",
+  md: "px-6 py-3 text-base",
+  lg: "px-8 py-4 text-2xl",
+};
+---
+
+<a
+  href={href}
+  class=`inline-flex items-center justify-center w-max font-semibold font-heading uppercase cursor-pointer ${sizes[size]} ${variants[variant]}`
+  >{title}</a
+>

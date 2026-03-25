@@ -1,0 +1,163 @@
+---
+import Badge from "../components/Badge.astro";
+import Hero from "../components/Hero.astro";
+import Accountability from "../components/icons/Accountability.astro";
+import BarBell from "../components/icons/BarBell.astro";
+import Technique from "../components/icons/Technique.astro";
+import Tick from "../components/icons/Tick.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import profileImg from "/public/profile_img.webp";
+import FeaturedCard from "../components/FeaturedCard.astro";
+import Button from "../components/Button.astro";
+import strength from "/public/strength.webp";
+import conditioning from "/public/conditioning.webp";
+import mobility from "/public/mobility.webp";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import Star from "../components/icons/Star.astro";
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <main>
+    <section>
+      <Hero />
+    </section>
+
+    <!-- Three Pillars -->
+    <section class="p-24 bg-brand-900/90">
+      <div class="max-w-lg mx-auto px-6 grid lg:grid-cols-3">
+        <div class="p-8 border-l border-brand-800 lg:hover:bg-brand-800 transition-colors">
+          <BarBell class="text-primary w-10 h-10 mb-4" />
+          <h2 class="font-heading uppercase font-semibold text-3xl mb-2">Strength</h2>
+          <p class="text-brand-200">
+            Build a solid foundation with training that improves stability, power, and confidence in how you move.
+          </p>
+        </div>
+
+        <div class="p-8 border-l border-brand-800 lg:hover:bg-brand-800 transition-colors">
+          <Technique class="text-primary w-10 h-10 mb-4" />
+          <h2 class="font-heading uppercase font-semibold text-3xl mb-2">Technique</h2>
+          <p class="text-brand-200">
+            Learn clear, efficient movement patterns that help you train safely and get more out of every session.
+          </p>
+        </div>
+
+        <div class="p-8 border-l border-brand-800 lg:hover:bg-brand-800 transition-colors">
+          <Accountability class="text-primary w-10 h-10 mb-4" />
+          <h2 class="font-heading uppercase font-semibold text-3xl mb-2">Accountability</h2>
+          <p class="text-brand-200">Stay consistent with simple progress tracking and support that keeps you moving toward your goals.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="py-24 bg-brand-900">
+      <div class="w-28 h-2 bg-secondary mb-12"></div>
+
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <img src={profileImg.src} alt="Profile image" class="w-full grayscale-[80%] object-cover" />
+
+          <div class="absolute -bottom-6 left-6 bg-primary p-6 shadow-lg">
+            <p class="text-xl font-semibold text-brand-900">Ashton Steele</p>
+            <p class="text-brand-700">Head Performance Coach</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-8">
+          <h2 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight">
+            THE PHILOSOPHY OF <span class="text-secondary">ELITE PERFORMANCE</span>
+          </h2>
+
+          <p class="text-base sm:text-lg text-brand-200 leading-relaxed">
+            Training isn’t just something you do — it’s a practice. At Kinetic Precision, we focus on building strong, capable movement
+            through clear guidance and purposeful progression. Every session is designed to help you grow with confidence and consistency.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <Badge icon={Tick} title="Certified Personal Trainer" />
+            <Badge icon={Tick} title="Nutrition Coaching Certified" />
+            <Badge icon={Tick} title="Group Fitness Instructor" />
+            <Badge icon={Tick} title="First Aid & CPR Qualified" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Sessions -->
+    <section class="bg-brand-900/90 py-24">
+      <div class="flex justify-between items-end max-w-xl px-12 mx-auto">
+        <div class="uppercase font-heading">
+          <span class="text-secondary text-lg font-semibold">Systems</span>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2">Featured Sessions</h2>
+        </div>
+        <a href="/" class="uppercase text-sm font-semibold border-b-2 pb-1 hover:text-primary hover:border-primary">View All Programs</a>
+      </div>
+
+      <div class="grid lg:grid-cols-3 md:grid-rows-2 gap-8 auto-rows-[300px] pt-12 max-w-xl px-12">
+        {/* Left tall card */}
+        <div class="md:row-span-2 h-full">
+          <FeaturedCard
+            image={strength.src}
+            label="Strength"
+            title="Strength Foundations"
+            description="Technique-focused training to improve stability, control, and full-body strength.">
+            <Button slot="action" title="Explore →" variant="primary" />
+          </FeaturedCard>
+        </div>
+
+        {/* Top right wide card */}
+        <div class="md:col-span-2 h-full">
+          <FeaturedCard
+            image={conditioning.src}
+            label="Conditioning"
+            title="Everyday Conditioning"
+            description="A balanced mix of intervals, cardio, and functional work to boost overall fitness."
+            cta="Explore →"
+          />
+        </div>
+
+        {/* Bottom row cards */}
+        <div class="h-full">
+          <FeaturedCard
+            image={mobility.src}
+            label="Mobility"
+            title="Mobility & Recovery"
+            description="Guided mobility and restorative sessions to support long-term training."
+            cta="Learn More →"
+          />
+        </div>
+
+        <div class="h-full">
+          <FeaturedCard variant="solid" color="bg-primary" title="Personal Coaching" description="Your goals, your plan.">
+            <Button slot="action" title="Start →" variant="secondary" />
+          </FeaturedCard>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-brand-900">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center uppercase font-heading">Field Reports</h2>
+
+      <div class="grid md:grid-cols-2 max-w-xl px-12 mx-auto gap-12 mt-24">
+        <TestimonialCard
+          borderColour="primary"
+          starRating={Star}
+          quote="The precision in Alex's programming is unlike anything I've experienced. My deadlift increased by 40kg in 12 weeks while maintaining total joint integrity."
+          lineColour="bg-secondary"
+          author="Chris Smart"
+          role="Power Lifter"
+        />
+        <TestimonialCard
+          borderColour="secondary"
+          starRating={Star}
+          quote="Finally, a trainer who understands the mechanics of movement. Kinetic Precision helped me recover from a chronic shoulder injury and hit new PRs."
+          lineColour="bg-primary"
+          author="Natasha Forrest"
+          role="Ultra Runner"
+        />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

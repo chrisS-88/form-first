@@ -1,0 +1,11 @@
+---
+const { href, label } = Astro.props;
+const current = Astro.url.pathname;
+---
+
+<a
+  href={href}
+  class={`text-brand-300 hover:text-brand-50 ${current === href ? "font-semibold text-primary border-b-2 border-primary" : ""} 
+  }`}>
+  {label}
+</a>

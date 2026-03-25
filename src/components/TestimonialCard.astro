@@ -1,0 +1,23 @@
+---
+const { starRating: StarRating, borderColour, quote, lineColour, author, role, avatar } = Astro.props;
+---
+
+<div class={`flex flex-col p-12 bg-brand-800/40 border-t-4 border-${borderColour}`}>
+  <div class="flex text-primary">
+    {(<StarRating />)}
+    {(<StarRating />)}
+    {(<StarRating />)}
+    {(<StarRating />)}
+    {(<StarRating />)}
+  </div>
+
+  <p class="my-12 text-2xl italic leading-relaxed">" {quote} "</p>
+
+  <div class="flex gap-4 items-center">
+    <div class={`w-10 h-1 ${lineColour}`}></div>
+    <div>
+      <p class="text-2xl font-semibold">{author}</p>
+      <p class="text-sm text-brand-300 uppercase tracking-wider">{role}</p>
+    </div>
+  </div>
+</div>
