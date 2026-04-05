@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.16.15",
-    "pennine-design-system": "file:../../pennine-design-system"
+    "pennine-design-system": "file:./pennine-design-system"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
