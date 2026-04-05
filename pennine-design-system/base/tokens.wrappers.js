@@ -1,0 +1,9 @@
+export default {
+  maxWidth: {
+    xs: "32rem", // ~512px
+    sm: "40rem", // ~640px
+    md: "48rem", // ~768px
+    lg: "64rem", // ~1024px
+    xl: "80rem", // ~1280px
+  },
+};
