@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "form-first",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -13,8 +13,7 @@
     "pennine-design-system": "file:../../pennine-design-system"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.23",
-    "postcss": "^8.5.6",
+    "@astrojs/tailwind": "^6.0.2",
     "tailwindcss": "^3.4.19"
   }
 }
