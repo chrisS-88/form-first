@@ -1,0 +1,31 @@
+---
+import Button from "./Button.astro";
+import heroImg from "/public/hero_bg.webp";
+---
+
+<section>
+  <div class="relative h-[90vh]">
+    <img src={heroImg.src} alt="Abstract training background" class="absolute w-full h-full object-cover object-top" />
+    <div class="absolute inset-0 bg-brand-900/95"></div>
+
+    <div
+      class="relative z-10 h-full max-w-xl mx-auto px-6 flex flex-col justify-center gap-10 lg:flex-row lg:justify-between lg:items-center lg:px-16">
+      <h1 class="uppercase font-extrabold text-5xl leading-tight lg:text-7xl">
+        Form First <br />
+        <span class="text-primary">Booking Flow Demo</span>
+      </h1>
+
+      <div class="lg:max-w-xs lg:pl-8">
+        <div class="mb-6 border-l-4 border-secondary pl-4 lg:pl-8">
+          <p class="text-lg sm:text-xl font-semibold text-brand-100">A guided multi‑step experience</p>
+          <p class="text-base sm:text-xl text-brand-300">
+            A clean, component‑driven booking flow built with the Pennine Design System. Designed to show clarity, structure, and UX
+            thinking.
+          </p>
+        </div>
+
+        <Button title="Start Booking" href="/book" size="lg" />
+      </div>
+    </div>
+  </div>
+</section>
