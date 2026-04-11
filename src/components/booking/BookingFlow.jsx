@@ -21,8 +21,8 @@ export default function BookingFlow() {
   const back = () => setStep((s) => s - 1);
 
   return (
-    <div className="min-h-screen bg-brand-900 flex items-center justify-center p-6">
-      <div className="w-full max-w-xl bg-brand-800 p-8 rounded-xl shadow-xl border border-brand-700">
+    <div className="min-h-screen bg-brand-900 flex items-center justify-center p-4">
+      <div className="w-full max-w-xl bg-brand-800 p-6 sm:p-8 rounded-xl shadow-xl border border-brand-700">
         {step === 1 && <StepService data={data} setData={setData} next={next} />}
         {step === 2 && <StepDateTime data={data} setData={setData} next={next} back={back} />}
         {step === 3 && <StepDetails data={data} setData={setData} next={next} back={back} />}

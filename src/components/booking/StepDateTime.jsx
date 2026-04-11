@@ -15,14 +15,14 @@ export default function StepDateTime({ data, setData, next, back }) {
 
   return (
     <StepContainer title="Choose Date & Time">
-      <div className="space-y-6">
+      <div className="space-y-16">
         <div>
-          <h3 className="text-xl font-semibold mb-3">Select a Date</h3>
+          <h3 className="text-4xl font-semibold mb-6">Select a Date</h3>
           <DateGrid dates={dates} value={data.date} onChange={(date) => setData({ ...data, date })} />
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold mb-3">Select a Time</h3>
+          <h3 className="text-4xl font-semibold mb-6">Select a Time</h3>
           <TimeGrid times={times} value={data.time} onChange={(time) => setData({ ...data, time })} />
         </div>
       </div>

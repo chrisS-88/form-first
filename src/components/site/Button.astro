@@ -1,4 +1,13 @@
 ---
+// Props interface added after React integration - React enables stricter TS checking
+// which affects .astro files too. Prevents "implicitly has any type" indexing errors.
+interface Props {
+  title: string;
+  href: string;
+  size: "sm" | "md" | "lg";
+  variant: "primary" | "secondary" | "light";
+}
+
 const variants = {
   primary:
     "text-brand-900 bg-primary border border-primary hover:border-primary hover:bg-primary/90 transition-all font-heading tracking-wide",
@@ -19,7 +28,6 @@ const sizes = {
 const { title, href, size, variant } = Astro.props;
 ---
 
-<!-- @ts-nocheck -->
 <a
   href={href}
   class={`inline-flex items-center justify-center w-max font-semibold font-heading uppercase cursor-pointer ${sizes[size]} ${variants[variant]}`}>
