@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@astrojs/react": "^5.0.3",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "astro": "^5.16.15",
     "pennine-design-system": "file:./pennine-design-system",
     "react": "^19.2.5",

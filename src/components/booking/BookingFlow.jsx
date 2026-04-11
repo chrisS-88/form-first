@@ -1,6 +1,9 @@
 import { useState } from "react";
 import StepService from "../booking/StepService.jsx";
 import StepDateTime from "../booking/StepDateTime.jsx";
+import StepDetails from "./StepDetails.jsx";
+import StepReview from "./StepReview.jsx";
+import StepSuccess from "./StepSuccess.jsx";
 
 export default function BookingFlow() {
   const [step, setStep] = useState(1);
