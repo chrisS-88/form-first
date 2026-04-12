@@ -10,7 +10,7 @@ export default {
       colors: {
         primary: "#D7FF00",
         secondary: "#FF4D00",
-        accent: "#CBAC04",
+        accent: "#00C2FF",
       },
       fontFamily: {
         heading: ["Space Grotesk", "sans-serif"],

@@ -10,7 +10,7 @@ import NavLink from "./NavLink.astro";
     <a href="/" class="font-heading text-3xl font-semibold text-primary"> Form First </a>
 
     <!-- decktop menu -->
-    <ul class="hidden lg:flex gap-5">
+    <ul class="hidden md:flex gap-5">
       {
         navLinks.map((link) => {
           return (
@@ -22,14 +22,10 @@ import NavLink from "./NavLink.astro";
       }
     </ul>
 
-    <div class="hidden lg:flex">
-      <Button title="Get Started" href="/" size="md" variant="primary" />
-    </div>
-
     <!-- Mobile Button -->
     <button
       id="menu-btn"
-      class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1 focus:outline-none cursor-pointer"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1 focus:outline-none cursor-pointer"
       aria-label="Toggle Menu">
       <span class="hamburger-bar transition-transform"></span>
       <span class="hamburger-bar transition-opacity"></span>
@@ -39,29 +35,22 @@ import NavLink from "./NavLink.astro";
     <!-- Mobile Sidebar -->
     <div
       id="mobile-menu"
-      class="p-4 z-50 lg:hidden fixed left-0 top-0 h-full w-2/3 bg-dark/90 backdrop-blur-md transform -translate-x-full transition-all duration-700 ease-in-out opacity-0 text-light overflow-y-scroll">
-      <span class="text-xl font-light text-primary">Form First</span>
-
-      <div class="w-full h-[.5px] bg-secondary/60 mt-6"></div>
-
-      <ul class="flex flex-col justify-center gap-6 text-2xl px-4 py-24">
+      class="p-6 z-50 lg:hidden fixed left-0 top-24 h-full w-full bg-brand-900/95 backdrop-blur-xl
+         transform -translate-x-full transition-all duration-500 ease-in-out opacity-0 overflow-y-auto">
+      <ul class="flex flex-col gap-8 text-2xl font-heading uppercase tracking-wide mt-24">
         {
-          navLinks.map((link, i) => {
-            return (
-              <li>
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            );
-          })
+          navLinks.map((link) => (
+            <li>
+              <NavLink href={link.href} label={link.label} />
+            </li>
+          ))
         }
       </ul>
 
-      <div class="w-full h-[.5px] bg-secondary/60 mb-6"></div>
+      <div class="mt-12 h-px w-full bg-secondary/40"></div>
 
-      <div class="capitalize text-xs">
-        <div class="mt-16">
-          <p>© {new Date().getFullYear()} Your Company Name</p>
-        </div>
+      <div class="mt-10 text-xs text-brand-300 tracking-wider">
+        <p>© {new Date().getFullYear()} Form First</p>
       </div>
     </div>
   </nav>

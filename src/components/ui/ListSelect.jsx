@@ -5,10 +5,10 @@ export default function ListSelect({ items, value, onChange }) {
         <button
           key={item.id}
           onClick={() => onChange(item.id)}
-          className={`w-full p-6 rounded-lg border transition text-left
+          className={`w-full p-6 sm:p-3 rounded-lg border transition text-left
             ${value === item.id ? "bg-primary text-brand-900 border-primary" : "bg-brand-800 border-brand-700 hover:bg-brand-700"}
           `}>
-          <span className="text-4xl font-semibold">{item.label}</span>
+          <span className="text-4xl sm:text-xl font-semibold">{item.label}</span>
         </button>
       ))}
     </div>
