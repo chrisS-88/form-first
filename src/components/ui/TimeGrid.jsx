@@ -1,16 +1,22 @@
 export default function TimeGrid({ times, value, onChange }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-      {times.map((t) => (
-        <button
-          key={t}
-          onClick={() => onChange(t)}
-          className={`p-6 sm:p-3 rounded-lg border transition text-center md:text-left text-3xl sm:text-base
-            ${value === t ? "bg-accent text-brand-900 border-accent" : "bg-brand-800 border-brand-700 hover:bg-brand-700"}
-          `}>
-          {t}
-        </button>
-      ))}
+    <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+      {times.map((t) => {
+        const selected = value === t;
+
+        return (
+          <button
+            key={t}
+            onClick={() => onChange(t)}
+            className={`
+              rounded-xl py-3 border transition-all
+              text-sm font-medium text-center
+              ${selected ? "bg-brand-50/10 border-brand-50/20 text-brand-50" : "bg-brand-50/5 border-brand-50/10 text-brand-50/70 hover:bg-brand-50/10"}
+            `}>
+            {t}
+          </button>
+        );
+      })}
     </div>
   );
 }

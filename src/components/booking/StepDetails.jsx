@@ -9,36 +9,38 @@ export default function StepDetails({ data, setData, next, back }) {
   const isValid = data.name && data.email;
 
   return (
-    <StepContainer title="Your Details">
-      <div className="space-y-6">
-        <div className="space-y-2">
-          <label className="block text-brand-200 text-2xl sm:text-sm font-medium">Name</label>
+    <StepContainer title="Your details" subtitle="Please fill in your details below">
+      <div className="space-y-5">
+        <div className="space-y-1">
+          <label className="text-xs text-brand-50/50">Name</label>
           <input
             type="text"
             value={data.name}
             onChange={(e) => update("name", e.target.value)}
-            className="w-full p-3 text-xl sm:text-base rounded-lg bg-brand-800 border border-brand-700 text-brand-50 focus:outline-none focus:border-primary"
-            placeholder="Your name"
+            className="user-input"
+            placeholder="John Doe"
           />
         </div>
 
-        <div className="space-y-2">
-          <label className="block text-brand-200 text-2xl sm:text-sm font-medium">Email</label>
+        <div className="space-y-1">
+          <label className="text-xs text-brand-50/50">Email</label>
           <input
             type="email"
             value={data.email}
             onChange={(e) => update("email", e.target.value)}
-            className="w-full p-3 text-xl sm:text-base rounded-lg bg-brand-800 border border-brand-700 text-brand-50 focus:outline-none focus:border-primary"
+            className="user-input"
             placeholder="you@example.com"
           />
+
+          {!data.email.includes("@") && data.email && <p className="text-xs text-red-400">Invalid email</p>}
         </div>
 
-        <div className="space-y-2">
-          <label className="block text-brand-200 text-2xl sm:text-sm font-medium">Notes (optional)</label>
+        <div className="space-y-1">
+          <label className="text-xs text-brand-50/50">Notes (optional)</label>
           <textarea
             value={data.notes}
             onChange={(e) => update("notes", e.target.value)}
-            className="w-full p-3 text-xl sm:text-base rounded-lg bg-brand-800 border border-brand-700 text-brand-50 h-28 resize-none focus:outline-none focus:border-primary"
+            className="user-input h-28 resize-none"
             placeholder="Anything you'd like to mention?"
           />
         </div>

@@ -10,7 +10,7 @@ export default function StepService({ data, setData, next }) {
   ];
 
   return (
-    <StepContainer title="Choose a Service">
+    <StepContainer title="Choose a service" subtitle="Please make a selection">
       <ListSelect items={services} value={data.service} onChange={(service) => setData({ ...data, service })} />
 
       <StepFooter onBack={null} onNext={next} nextDisabled={!data.service} />

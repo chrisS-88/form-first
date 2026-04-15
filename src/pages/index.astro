@@ -8,7 +8,7 @@ import profileImg from "/public/profile_img.webp";
 import Button from "../components/site/Button.astro";
 ---
 
-<BaseLayout>
+<BaseLayout title="Home">
   <main>
     <section>
       <Hero />
@@ -90,7 +90,7 @@ import Button from "../components/site/Button.astro";
         <span class="text-primary underline decoration-secondary">Booking Flow</span>
       </h2>
 
-      <div class="mt-12 flex gap-4 justify-center">
+      <div class="mt-12 flex flex-col sm:flex-row items-center gap-4 justify-center">
         <Button href="/book" title="Start Booking" size="lg" variant="primary" />
         <Button href="/about" title="Learn More" size="lg" variant="light" />
       </div>

@@ -1,8 +1,13 @@
-export default function StepContainer({ title, children }) {
+export default function StepContainer({ title, subtitle, children }) {
   return (
-    <div className="text-brand-50 space-y-12">
-      <h2 className="text-5xl sm:text-2xl text-center font-heading font-extrabold uppercase">{title}</h2>
-      {children}
+    <div className="text-brand-50 space-y-6">
+      <div className="space-y-1 text-center">
+        <h2 className="text-2xl font-semibold tracking-tight font-heading">{title}</h2>
+
+        {subtitle && <p className="text-sm text-brand-50/60">{subtitle}</p>}
+      </div>
+
+      <div className="space-y-4">{children}</div>
     </div>
   );
 }
