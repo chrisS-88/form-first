@@ -52,7 +52,7 @@ export default function ManageBooking() {
       const found = MOCK_BOOKINGS.find((b) => b.email.toLowerCase() === cleaned || b.id.toLowerCase() === cleaned);
       setResult(found || null);
       setLoading(false);
-    }, [1800]);
+    }, [1200]);
   };
 
   return (

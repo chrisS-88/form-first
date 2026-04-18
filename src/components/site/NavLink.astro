@@ -1,11 +1,12 @@
 ---
 const { href, label } = Astro.props;
 const current = Astro.url.pathname;
+const isActive = current === href;
 ---
 
 <a
   href={href}
-  class={`text-brand-300 hover:text-brand-50 ${current === href ? "font-semibold text-primary border-b-2 border-primary" : ""} 
-  }`}>
+  class={`inline-flex items-center text-sm tracking-wide transition-all duration-150
+    ${isActive ? "text-brand-50 font-semibold border-b border-brand-50 pb-0.5" : "text-brand-200 hover:text-brand-50"}`}>
   {label}
 </a>
