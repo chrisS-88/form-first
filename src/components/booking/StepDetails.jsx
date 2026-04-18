@@ -1,7 +1,7 @@
 import StepContainer from "../ui/StepContainer.jsx";
 import StepFooter from "../ui/StepFooter.jsx";
 
-export default function StepDetails({ data, setData, next, back }) {
+export default function StepDetails({ step, data, setData, next, back }) {
   const update = (field, value) => {
     setData({ ...data, [field]: value });
   };
@@ -46,7 +46,7 @@ export default function StepDetails({ data, setData, next, back }) {
         </div>
       </div>
 
-      <StepFooter onBack={back} onNext={next} nextDisabled={!isValid} />
+      <StepFooter step={step} onBack={back} onNext={next} nextDisabled={!isValid} />
     </StepContainer>
   );
 }

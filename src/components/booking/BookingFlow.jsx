@@ -23,10 +23,9 @@ export default function BookingFlow() {
   return (
     <div className="min-h-screen bg-brand-900 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-md">
-        {/* Progress bar */}
-
         {/* Card */}
         <div className="bg-brand-800/80 backdrop-blur-xl rounded-2xl border border-brand-50/10 shadow-2xl p-6 sm:p-8">
+          {/* Progress bar */}
           {step !== 5 && (
             <div className="flex gap-2 mb-6">
               {[1, 2, 3, 4].map((s) => (
@@ -35,10 +34,10 @@ export default function BookingFlow() {
             </div>
           )}
           <div className="min-h-[400px] flex flex-col">
-            {step === 1 && <StepService data={data} setData={setData} next={next} />}
-            {step === 2 && <StepDateTime data={data} setData={setData} next={next} back={back} />}
-            {step === 3 && <StepDetails data={data} setData={setData} next={next} back={back} />}
-            {step === 4 && <StepReview data={data} next={next} back={back} />}
+            {step === 1 && <StepService step={step} data={data} setData={setData} next={next} />}
+            {step === 2 && <StepDateTime step={step} data={data} setData={setData} next={next} back={back} />}
+            {step === 3 && <StepDetails step={step} data={data} setData={setData} next={next} back={back} />}
+            {step === 4 && <StepReview step={step} data={data} next={next} back={back} />}
             {step === 5 && <StepSuccess />}
           </div>
         </div>

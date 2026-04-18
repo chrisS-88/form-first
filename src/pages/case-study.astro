@@ -1,0 +1,116 @@
+---
+import Button from "../components/site/Button.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Case Study">
+  <main class="py-24 bg-brand-900 text-brand-200">
+    <div class="max-w-3xl mx-auto px-6 flex flex-col gap-12">
+      <header class="flex flex-col gap-6">
+        <h1 class="font-heading text-5xl sm:text-6xl font-extrabold uppercase text-brand-50">Booking flow demo</h1>
+
+        <p class="text-xl text-brand-300 max-w-2xl leading-relaxed">
+          A streamlined booking experience designed for service-based businesses. Built to reduce friction, remove back-and-forth, and make
+          booking feel immediate and clear.
+        </p>
+      </header>
+
+      <section class="flex flex-col gap-6">
+        <h2 class="font-heading text-3xl font-semibold text-brand-50 uppercase">The problem</h2>
+
+        <p class="leading-relaxed text-brand-200">
+          For many small businesses, booking still happens through messages, emails, or calls. It works, but it’s slow, inconsistent, and
+          easy to lose track of.
+        </p>
+
+        <p class="leading-relaxed text-brand-200">
+          From the client side, availability isn’t always clear. From the business side, managing enquiries becomes repetitive and
+          time-consuming.
+        </p>
+      </section>
+
+      <section class="flex flex-col gap-6">
+        <h2 class="font-heading text-3xl font-semibold text-brand-50 uppercase">My approach</h2>
+
+        <p class="leading-relaxed text-brand-200">
+          I focused on removing friction at every step. The aim was to make booking feel guided, predictable, and quick to complete.
+        </p>
+
+        <p class="leading-relaxed text-brand-200">
+          Instead of asking for everything at once, the flow breaks the process into small, focused steps — one decision at a time.
+        </p>
+      </section>
+
+      <section class="flex flex-col gap-6">
+        <h2 class="font-heading text-3xl font-semibold text-brand-50 uppercase">The solution</h2>
+
+        <ul class="space-y-4 text-brand-200">
+          <li class="border-l-4 border-primary pl-4 py-2">
+            <strong class="text-brand-50">Guided step-by-step flow</strong><br />
+            A structured journey that keeps users focused from service selection through to confirmation.
+          </li>
+
+          <li class="border-l-4 border-secondary pl-4 py-2">
+            <strong class="text-brand-50">Focused interface design</strong><br />
+            Each screen is intentionally minimal, reducing distraction and decision fatigue.
+          </li>
+
+          <li class="border-l-4 border-primary pl-4 py-2">
+            <strong class="text-brand-50">Reusable component structure</strong><br />
+            Built so the same pattern can be adapted across different service-based businesses.
+          </li>
+        </ul>
+      </section>
+
+      <section class="flex flex-col gap-6">
+        <h2 class="font-heading text-3xl font-semibold text-brand-50 uppercase">How it would scale</h2>
+
+        <p class="leading-relaxed text-brand-200">This is a front-end prototype, designed to plug into a real backend system.</p>
+
+        <p class="leading-relaxed text-brand-200">
+          In production, it would connect to booking data, availability logic, and automated confirmations — while keeping the same user
+          flow intact.
+        </p>
+      </section>
+
+      <section class="flex flex-col gap-6">
+        <h2 class="font-heading text-3xl font-semibold text-brand-50 uppercase">Who it’s for</h2>
+
+        <p class="leading-relaxed text-brand-200">This type of booking experience works well for any service-based business, including:</p>
+
+        <ul class="list-disc pl-6 text-brand-200 space-y-2">
+          <li>Personal trainers and coaches</li>
+          <li>Salons and barbers</li>
+          <li>Consultants and freelancers</li>
+          <li>Health and wellness services</li>
+        </ul>
+      </section>
+
+      <section class="flex flex-col gap-6">
+        <h2 class="font-heading text-3xl font-semibold text-brand-50 uppercase">The result</h2>
+
+        <p class="leading-relaxed text-brand-200">
+          The final experience feels simple, predictable, and easy to trust. It reduces friction for users and removes unnecessary admin for
+          the business.
+        </p>
+
+        <p class="leading-relaxed text-brand-200">
+          While this is a demo, the structure is production-ready and can scale into a full booking system with minimal changes.
+        </p>
+      </section>
+
+      <section class="pt-12 border-t border-brand-800 flex flex-col gap-6">
+        <h2 class="font-heading text-3xl font-semibold text-brand-50 uppercase">Want something like this?</h2>
+
+        <p class="text-brand-200 leading-relaxed">
+          If you run a service-based business and want a cleaner way for clients to book, I can build something tailored to your workflow.
+        </p>
+
+        <div class="flex gap-4">
+          <Button title="Get in touch" href="https://penninedigital.co.uk/contact/" size="md" variant="primary" />
+          <Button title="Back to my work" href="https://penninedigital.co.uk/projects/" size="md" variant="light" />
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

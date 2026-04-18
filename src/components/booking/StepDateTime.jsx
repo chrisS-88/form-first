@@ -3,7 +3,7 @@ import DateGrid from "../ui/DateGrid.jsx";
 import TimeGrid from "../ui/TimeGrid.jsx";
 import StepFooter from "../ui/StepFooter.jsx";
 
-export default function StepDateTime({ data, setData, next, back }) {
+export default function StepDateTime({ step, data, setData, next, back }) {
   // Generate next 7 days in DD/MM/YYYY
   const dates = Array.from({ length: 7 }).map((_, i) => {
     const d = new Date();
@@ -37,7 +37,7 @@ export default function StepDateTime({ data, setData, next, back }) {
         </div>
       </div>
 
-      <StepFooter onBack={back} onNext={next} nextDisabled={!data.date || !data.time} />
+      <StepFooter step={step} onBack={back} onNext={next} nextDisabled={!data.date || !data.time} />
     </StepContainer>
   );
 }

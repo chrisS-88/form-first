@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import StepContainer from "../ui/StepContainer.jsx";
 
 export default function StepSuccess() {

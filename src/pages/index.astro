@@ -16,84 +16,89 @@ import Button from "../components/site/Button.astro";
 
     <section class="py-24 bg-brand-900/90">
       <div class="max-w-4xl mx-auto px-6 text-center flex flex-col gap-8">
-        <h2 class="font-heading uppercase font-extrabold text-4xl sm:text-5xl lg:text-6xl">A Clear, Guided Booking Experience</h2>
+        <h2 class="font-heading uppercase font-extrabold text-4xl sm:text-5xl lg:text-6xl">A simple way to take bookings</h2>
 
         <p class="text-brand-200 text-lg leading-relaxed max-w-2xl mx-auto">
-          Form First is a multi‑step booking flow demo built to showcase clarity, structure, and component‑driven UI. It demonstrates how
-          small businesses can offer a simple, trustworthy way for clients to book sessions — without complexity or clutter.
+          This demo shows how I build clear, straightforward booking flows for service-based businesses. No confusion, no back-and-forth —
+          just an easy way for clients to book in.
         </p>
 
         <div class="mt-6">
-          <Button href="/book" title="Start Booking" size="lg" variant="primary" />
+          <Button href="/book" title="Try the demo" size="lg" variant="primary" />
         </div>
       </div>
-    </section>
 
-    <section class="py-24 bg-brand-900">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-        <div class="p-8 border-l border-brand-800">
-          <BarBell className="text-primary w-10 h-10 mb-4" />
-          <h3 class="font-heading uppercase font-semibold text-2xl mb-2">Step‑by‑Step Flow</h3>
-          <p class="text-brand-200">A guided journey through service selection, date/time picking, personal details, and confirmation.</p>
-        </div>
+      <section class="py-24 bg-brand-900">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+          <div class="p-8 border-l border-brand-800">
+            <BarBell className="text-primary w-10 h-10 mb-4" />
+            <h3 class="font-heading uppercase font-semibold text-2xl mb-2">Clear step-by-step flow</h3>
 
-        <div class="p-8 border-l border-brand-800">
-          <Technique className="text-primary w-10 h-10 mb-4" />
-          <h3 class="font-heading uppercase font-semibold text-2xl mb-2">Component‑Driven</h3>
-          <p class="text-brand-200">
-            Each step is built as a reusable component, demonstrating clean structure and maintainable UI patterns.
-          </p>
-        </div>
+            <p class="text-brand-200">
+              Clients are guided from start to finish — choosing a service, picking a time, and confirming their booking without any
+              friction.
+            </p>
+          </div>
 
-        <div class="p-8 border-l border-brand-800">
-          <Accountability className="text-primary w-10 h-10 mb-4" />
-          <h3 class="font-heading uppercase font-semibold text-2xl mb-2">Realistic Mock Data</h3>
-          <p class="text-brand-200">
-            Includes a mocked “manage booking” view and a simple admin list to simulate real‑world functionality.
-          </p>
-        </div>
-      </div>
-    </section>
+          <div class="p-8 border-l border-brand-800">
+            <Technique className="text-primary w-10 h-10 mb-4" />
+            <h3 class="font-heading uppercase font-semibold text-2xl mb-2">Built to be reused</h3>
 
-    <section class="py-24 bg-brand-900/95">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        <div class="flex flex-col gap-8">
-          <h2 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight">
-            Built for Clarity <br />
-            <span class="text-secondary">Designed for Flow</span>
-          </h2>
+            <p class="text-brand-200">
+              Each part of the flow is designed to be flexible, so it can be adapted to different businesses and booking setups.
+            </p>
+          </div>
 
-          <p class="text-base sm:text-lg text-brand-200 leading-relaxed">
-            This project focuses on the essentials of a booking experience: clear steps, predictable interactions, and a calm interface.
-            It’s intentionally minimal — no backend, no authentication — just a believable, functional flow that demonstrates front‑end
-            thinking.
-          </p>
+          <div class="p-8 border-l border-brand-800">
+            <Accountability className="text-primary w-10 h-10 mb-4" />
+            <h3 class="font-heading uppercase font-semibold text-2xl mb-2">Real-world example</h3>
 
-          <div>
-            <Button href="/about" title="About This Demo" size="md" variant="primary" />
+            <p class="text-brand-200">
+              This demo includes a basic booking view to show how the full experience could work in a real project.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div class="relative">
-          <img src={profileImg.src} alt="Interface preview" class="w-full grayscale-[80%] object-cover" />
-          <div class="absolute -bottom-6 left-6 bg-primary p-6 shadow-lg">
-            <p class="text-xl font-semibold text-brand-900">Form First</p>
-            <p class="text-brand-700">Booking Flow Demo</p>
+      <section class="py-24 bg-brand-900/95">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+          <div class="flex flex-col gap-8">
+            <h2 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight">
+              Built to feel simple <br />
+              <span class="text-secondary">from start to finish</span>
+            </h2>
+
+            <p class="text-base sm:text-lg text-brand-200 leading-relaxed">
+              The focus here is keeping things easy to follow. Each step is clear, nothing feels overwhelming, and the whole flow works the
+              way you’d expect. It’s the kind of experience that makes booking feel quick instead of frustrating.
+            </p>
+
+            <div>
+              <Button href="/about" title="About this demo" size="md" variant="primary" />
+            </div>
+          </div>
+
+          <div class="relative">
+            <img src={profileImg.src} alt="Interface preview" class="w-full grayscale-[80%] object-cover" />
+            <div class="absolute -bottom-6 left-6 bg-primary p-6 shadow-lg">
+              <p class="text-xl font-semibold text-brand-900">Form First</p>
+              <p class="text-brand-700">Booking Flow Demo</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="py-24 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-primary/10 via-primary/5 to-brand-900">
-      <h2 class="text-4xl sm:text-5xl lg:text-8xl text-center font-heading font-extrabold uppercase">
-        Try the <br />
-        <span class="text-primary underline decoration-secondary">Booking Flow</span>
-      </h2>
+      <section class="py-24 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-primary/10 via-primary/5 to-brand-900">
+        <h2 class="text-4xl sm:text-5xl lg:text-8xl text-center font-heading font-extrabold uppercase">
+          Try the <br />
+          <span class="text-primary underline decoration-secondary">booking flow</span>
+        </h2>
 
-      <div class="mt-12 flex flex-col sm:flex-row items-center gap-4 justify-center">
-        <Button href="/book" title="Start Booking" size="lg" variant="primary" />
-        <Button href="/about" title="Learn More" size="lg" variant="light" />
-      </div>
+        <div class="mt-12 flex flex-col sm:flex-row items-center gap-4 justify-center">
+          <Button href="/book" title="Try the demo" size="lg" variant="primary" />
+          <Button href="/case-study" title="See how it works" size="lg" variant="light" />
+        </div>
+      </section>
     </section>
   </main>
 </BaseLayout>

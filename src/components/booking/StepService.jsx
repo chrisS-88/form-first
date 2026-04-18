@@ -2,7 +2,7 @@ import StepContainer from "../ui/StepContainer";
 import ListSelect from "../ui/ListSelect";
 import StepFooter from "../ui/StepFooter";
 
-export default function StepService({ data, setData, next }) {
+export default function StepService({ step, data, setData, next }) {
   const services = [
     { id: "strength", label: "Strength Training" },
     { id: "conditioning", label: "Conditioning" },
@@ -13,7 +13,7 @@ export default function StepService({ data, setData, next }) {
     <StepContainer title="Choose a service" subtitle="Please make a selection">
       <ListSelect items={services} value={data.service} onChange={(service) => setData({ ...data, service })} />
 
-      <StepFooter onBack={null} onNext={next} nextDisabled={!data.service} />
+      <StepFooter step={step} onBack={null} onNext={next} nextDisabled={!data.service} />
     </StepContainer>
   );
 }

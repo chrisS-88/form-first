@@ -1,7 +1,7 @@
 import StepContainer from "../ui/StepContainer.jsx";
 import StepFooter from "../ui/StepFooter.jsx";
 
-export default function StepReview({ data, next, back }) {
+export default function StepReview({ step, data, next, back }) {
   const formatDate = (iso) => {
     if (!iso) return "";
     const d = new Date(iso);
@@ -54,11 +54,10 @@ export default function StepReview({ data, next, back }) {
           )}
         </div>
 
-        {/* Confirmation hint */}
         <p className="text-xs text-white/40 text-center">Please confirm your details before continuing</p>
       </div>
 
-      <StepFooter onBack={back} onNext={next} nextDisabled={false} />
+      <StepFooter step={step} onBack={back} onNext={next} nextDisabled={false} />
     </StepContainer>
   );
 }
