@@ -1,45 +1,11 @@
 import { useState } from "react";
+import MOCK_BOOKINGS from "../../data/bookings";
 
 export default function ManageBooking() {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState(null);
   const [searched, setSearched] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const MOCK_BOOKINGS = [
-    {
-      id: "ABC123",
-      email: "john@example.com",
-      service: "Strength Training",
-      date: "18/04/2026",
-      time: "16:00",
-      name: "John Smith",
-    },
-    {
-      id: "XYZ456",
-      email: "sarah@example.com",
-      service: "Mobility & Recovery",
-      date: "21/04/2026",
-      time: "14:00",
-      name: "Sarah Harding",
-    },
-    {
-      id: "ABC456",
-      email: "chris@example.com",
-      service: "Conditioning",
-      date: "19/04/2026",
-      time: "10:30",
-      name: "Chris Smart",
-    },
-    {
-      id: "XYZ123",
-      email: "natasha@example.com",
-      service: "Conditioning",
-      date: "24/04/2026",
-      time: "09:00",
-      name: "Natasha Forrest",
-    },
-  ];
 
   const search = () => {
     setSearched(true);
